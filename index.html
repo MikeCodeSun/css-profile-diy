@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Profile</title>
+    <link rel="stylesheet" href="./styles/styles.css" />
+  </head>
+  <body>
+    <header class="section sec-1 active" id="header">
+      <div class="left-header">
+        <div class="shape"></div>
+        <div class="header-img">
+          <!-- <img src="/img/header.jpg" alt="" /> -->
+        </div>
+      </div>
+      <div class="right-header">
+        <h2>Hi, I'm <span>Mike</span> Developer</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, sunt
+          exercitationem. Possimus debitis sit quibusdam a incidunt explicabo,
+          suscipit dolore? Sapiente ab aperiam deserunt dolor! Dolore, aliquam?
+          Reprehenderit, necessitatibus temporibus!
+        </p>
+        <div class="main-btn">
+          <p>Download</p>
+          <div class="main-btn-icon">
+            <i class="fa-solid fa-download"></i>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="section sec-2" id="about"></section>
+      <section class="section sec-3" id="portfolio"></section>
+      <section class="section sec-4" id="blogs"></section>
+      <section class="section sec-5" id="contact"></section>
+    </main>
+    <!-- control page btn -->
+    <div class="controls">
+      <div class="control active" data-id="header">
+        <i class="fa-solid fa-house"></i>
+      </div>
+      <div class="control" data-id="about">
+        <i class="fa-solid fa-user"></i>
+      </div>
+      <div class="control" data-id="portfolio">
+        <i class="fa-solid fa-briefcase"></i>
+      </div>
+      <div class="control" data-id="blogs">
+        <i class="fa-solid fa-calendar-days"></i>
+      </div>
+      <div class="control" data-id="contact">
+        <i class="fa-solid fa-envelope"></i>
+      </div>
+    </div>
+    <script src="./app.js"></script>
+  </body>
+</html>
