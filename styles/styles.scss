@@ -86,24 +86,9 @@ small,
 // section
 .section {
   position: absolute;
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
   transform: translateY(-100%);
-}
-.sec-1 {
-  background-color: rebeccapurple;
-}
-.sec-2 {
-  background-color: red;
-}
-.sec-3 {
-  background-color: gold;
-}
-.sec-4 {
-  background-color: darkblue;
-}
-.sec-5 {
-  background-color: teal;
 }
 .active {
   transform: translateY(0);
@@ -119,6 +104,8 @@ small,
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+
   .control {
     background-color: var(--grey-color-06);
     color: var(--grey-color-03);
@@ -131,11 +118,287 @@ small,
     cursor: pointer;
     margin-bottom: 1rem;
     transition: transform 0.1s ease-in-out;
+    i {
+      font-size: 1rem;
+    }
     &:active {
-      transform: translateY(-3px);
+      transform: translateY(-2px);
     }
   }
   .active {
     background-color: var(--primary-color);
   }
 }
+
+// header
+.sec-1 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+
+  .left-header {
+    position: relative;
+
+    .shape {
+      width: 100%;
+      height: 100%;
+      clip-path: polygon(0 0, 65% 0, 75% 100%, 0 100%);
+      background-color: var(--primary-color);
+    }
+    .header-img {
+      background-color: rebeccapurple;
+      height: 90%;
+      width: 60%;
+      position: absolute;
+      top: 5%;
+      left: 25%;
+      border-radius: 10px;
+      overflow: hidden;
+      cursor: pointer;
+
+      &:hover {
+        img {
+          filter: grayscale(0);
+        }
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+        filter: grayscale(100%);
+        transition: all 0.4s ease-in-out;
+      }
+    }
+  }
+  .right-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-right: 20rem;
+    h2 {
+      margin-bottom: 1rem;
+      span {
+        color: var(--primary-color);
+      }
+    }
+    p {
+      line-height: 2rem;
+      margin-bottom: 1rem;
+    }
+  }
+}
+.about-content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+  padding: 3rem 10rem;
+  .about-info {
+    display: flex;
+    flex-direction: column;
+    h4 {
+      margin-bottom: 2rem;
+    }
+    p {
+      margin-bottom: 2rem;
+      padding-left: 2rem;
+    }
+  }
+  .project-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    .project {
+      border: 1px solid var(--grey-color-08);
+      padding: 1rem;
+      transition: all 0.5s ease-in-out;
+      border-radius: 5px;
+      cursor: pointer;
+      &:hover {
+        border-color: var(--primary-color);
+        transform: translateY(-5px);
+      }
+      h2 {
+        color: var(--primary-color);
+        position: relative;
+      }
+      h2::after {
+        content: "";
+        height: 2px;
+        width: 2.5rem;
+        background-color: var(--grey-color-08);
+        position: absolute;
+        top: 125%;
+        left: 0;
+      }
+      p {
+        padding-left: 3rem;
+        line-height: 2rem;
+      }
+    }
+  }
+}
+// about skill
+.about-skills {
+  margin-top: 3rem;
+  padding: 3rem 10rem;
+
+  h4 {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  .skills {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    .skill {
+      .percent-container {
+        display: flex;
+        align-items: center;
+        .percent {
+          width: 100%;
+          height: 5px;
+          background-color: var(--grey-color-06);
+          position: relative;
+        }
+        .percent::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 0;
+          height: 100%;
+
+          background-color: var(--primary-color);
+        }
+        .html::after {
+          width: 80%;
+        }
+        .css::after {
+          width: 90%;
+        }
+        .javascript::after {
+          width: 55%;
+        }
+        .react::after {
+          width: 85%;
+        }
+      }
+    }
+  }
+}
+// time line
+.about-timeline {
+  margin-top: 3rem;
+  padding: 3rem 10rem;
+  h4 {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  .timelines {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    .timeline {
+      display: flex;
+      align-items: flex-start;
+
+      .icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--primary-color);
+        padding: 1rem;
+        border-radius: 50%;
+        flex-direction: column;
+        position: relative;
+        i {
+          color: var(--text-color);
+        }
+        &::after {
+          position: absolute;
+          content: "";
+          top: 100%;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 2px;
+          height: 300%;
+          background-color: var(--grey-color-08);
+        }
+      }
+      .info {
+        margin-left: 1rem;
+        p {
+          margin-bottom: 1rem;
+        }
+        h4 {
+          margin-bottom: 1rem;
+          span {
+            color: var(--grey-color-06);
+          }
+        }
+      }
+    }
+  }
+}
+
+// main btn
+.main-btn {
+  display: flex;
+  align-self: flex-start;
+  border: 1px solid var(--primary-color);
+  align-items: center;
+  border-radius: 30px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+
+  h5 {
+    padding: 0 1rem;
+  }
+  .main-btn-icon {
+    background-color: var(--primary-color);
+    padding: 1rem;
+    border-radius: 30px;
+    display: flex;
+  }
+  &::before {
+    content: "";
+    background-color: var(--primary-color);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    z-index: -1;
+    transform: translateX(100%);
+    transition: all 0.5s ease-in-out;
+  }
+  &:hover::before {
+    transform: translateX(0);
+  }
+}
+// main title
+.main-title {
+  text-align: center;
+  position: relative;
+  margin-top: 1rem;
+  h1 {
+    span {
+      color: var(--primary-color);
+    }
+  }
+  h2 {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%);
+    color: var(--grey-color-08);
+    z-index: -1;
+  }
+}
+
+// media dynamic screen
+@import "./media";
