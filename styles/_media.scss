@@ -64,4 +64,9 @@
       padding: 0 10rem;
     }
   }
+  .sec-4 {
+    .blogs {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
 }
