@@ -69,4 +69,9 @@
       grid-template-columns: repeat(2, 1fr);
     }
   }
+  .sec-5 {
+    .contact-container {
+      grid-template-columns: 1fr;
+    }
+  }
 }
