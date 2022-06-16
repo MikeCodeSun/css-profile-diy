@@ -33,3 +33,20 @@ controlBtns.forEach((btn) => {
     }
   });
 });
+// change theme btn
+const themeBtn = selectElement(".theme-btn");
+const body = document.body;
+
+if (localStorage.getItem("theme")) {
+  body.classList.add("theme");
+}
+
+themeBtn.addEventListener("click", function () {
+  themeBtn.classList.toggle("theme-btn-active");
+  body.classList.toggle("theme");
+  if (body.classList.contains("theme")) {
+    localStorage.setItem("theme", "light");
+  } else {
+    localStorage.removeItem("theme");
+  }
+});
